@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+use Technodelight\FuseCli\App;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$arguments = $_SERVER['argv'];
+array_shift($arguments);
+
+exit((new App)->run($arguments));

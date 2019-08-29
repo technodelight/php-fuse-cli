@@ -1,0 +1,22 @@
+{
+    "name": "technodelight/fuse-cli",
+    "description": "Use loilo/fuse php lib in CLI",
+    "authors": [
+        {
+            "name": "Zsolt Gál",
+            "email": "zenc@zenc.hu"
+        }
+    ],
+    "require": {
+        "loilo/fuse": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Technodelight\\FuseCli\\": "src"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "bin": ["bin/fuse"]
+}
