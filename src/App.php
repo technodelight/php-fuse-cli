@@ -13,14 +13,14 @@ class App
             $i = new Io('php://stdin', 'r');
             $o = new Io('php://stdout', 'w');
             $e = new Io('php://stderr', 'w');
-            $term = join(' ', $args);
+            $args = new Args($args);
             $matched = false;
             while (!$i->eof()) {
                 $list = [$i->read()];
                 $fuse = new Fuse($list);
-                if (count($fuse->search($term)) > 0) {
+                if (count($fuse->search($args->term())) > 0) {
                     $matched = true;
-                    $o->write($list[0]);
+                    $args->isVerbose() && $o->write($list[0]);
                 }
             }
             $exitCode = $matched ? 0 : 1;
