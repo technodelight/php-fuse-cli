@@ -6,7 +6,7 @@
  
 ## install
  ```bash
-$ composer require --global technodelight/php-fuse-cli
+$ composer require --global technodelight/fuse-cli
  ```
  
 ## usage
