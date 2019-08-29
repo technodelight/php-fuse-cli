@@ -5,8 +5,8 @@ use Technodelight\FuseCli\App;
 
 if (is_file(__DIR__ . '/../vendor/autoload.php' )) {
     require_once __DIR__ . '/../vendor/autoload.php';
-} elseif (is_file(__DIR__ . '/../../../vendor/autoload.php')) {
-    require_once __DIR__ . '/../../../vendor/autoload.php';
+} elseif (is_file(__DIR__ . '/../../vendor/autoload.php')) {
+    require_once __DIR__ . '/../../vendor/autoload.php';
 } else {
     exit(255);
 }
