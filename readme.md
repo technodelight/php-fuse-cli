@@ -21,5 +21,12 @@ $ composer global require technodelight/fuse-cli
  ```
 
  options:
- -q: quiet mode (exit 0 on match, exit 1 on no match)
- -t[float]: set threshold (defaults to 0.4 for a more exact match)
+ - `-q`: quiet mode (exit 0 on match, exit 1 on no match)
+ ```bash
+ echo -e "house\ntrance\ntechno" | fuse trz -q && echo yep || echo nope # outputs: yep 
+ ```
+ - `-t[float]`: set threshold (defaults to 0.4 for a more exact match)
+ ```bash
+ echo -e "house\ntrance\ntechno" | fuse trz # outputs: trance
+ echo -e "house\ntrance\ntechno" | fuse trz -t0.8 # outputs: trance, techno
+ ```
