@@ -16,7 +16,7 @@ class App
             $matched = false;
             while (!$i->eof()) {
                 $list = [$i->read()];
-                $fuse = new Fuse($list);
+                $fuse = new Fuse($list, ['tokenize' => true, 'threshold' => $args->threshold()]);
                 if (count($fuse->search($args->term())) > 0) {
                     $matched = true;
                     if ($args->isVerbose()) {

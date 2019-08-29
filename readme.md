@@ -19,3 +19,7 @@ $ composer global require technodelight/fuse-cli
  # house
  # techno
  ```
+
+ options:
+ -q: quiet mode (exit 0 on match, exit 1 on no match)
+ -t[float]: set threshold (defaults to 0.4 for a more exact match)
