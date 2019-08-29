@@ -28,6 +28,7 @@ class Args
             $this->quietMode = true;
             unset($arguments[array_search('-q', $arguments)]);
         }
+        
         $this->term = join($arguments);
     }
 }

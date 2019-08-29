@@ -2,6 +2,7 @@
 <?php
 
 use Technodelight\FuseCli\App;
+use Technodelight\FuseCli\Args;
 
 if (is_file(__DIR__ . '/../vendor/autoload.php' )) {
     require_once __DIR__ . '/../vendor/autoload.php';
@@ -17,4 +18,4 @@ if (is_file(__DIR__ . '/../vendor/autoload.php' )) {
 $arguments = $_SERVER['argv'];
 array_shift($arguments);
 
-exit((new App)->run($arguments));
+exit((new App)->run(new Args($arguments)));
