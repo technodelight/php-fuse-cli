@@ -14,18 +14,20 @@ class App
             $o = new Io('php://stdout', 'w');
             $e = new Io('php://stderr', 'w');
             $term = join(' ', $args);
+            $matched = false;
             while (!$i->eof()) {
                 $list = [$i->read()];
                 $fuse = new Fuse($list);
                 if (count($fuse->search($term)) > 0) {
+                    $matched = true;
                     $o->write($list[0]);
                 }
             }
-            $exitCode = 0;
+            $exitCode = $matched ? 0 : 1;
         } catch (Exception $exception) {
             $e->write($exception->getMessage());
             $e->write($exception->getTraceAsString());
-            $exitCode = 1;
+            $exitCode = 2;
         } finally {
             $i->close();
             $o->close();
